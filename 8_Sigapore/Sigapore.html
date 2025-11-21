@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford University - Influential Professors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Navigation Button Styles */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 500;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Header styling for consistency */
+        header {
+            background: linear-gradient(135deg, #8B0000, #B22222);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        /* Additional styling for the page */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
+            margin-bottom: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .professors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .professor-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .professor-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .professor-card:hover .card-header img {
+            transform: scale(1.05);
+        }
+        
+        .card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+        }
+        
+        .professor-name {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .professor-title {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+            border-left: 3px solid #8B0000;
+            padding-left: 15px;
+        }
+        
+        .research-highlights h3 {
+            margin-top: 0;
+            color: #8B0000;
+        }
+        
+        .research-highlights ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .research-highlights li {
+            margin-bottom: 8px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #8B0000;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .toggle-btn {
+            width: 100%;
+            padding: 12px;
+            background: #8B0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            background: #A52A2A;
+        }
+        
+        .expanded-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .expanded-content.active {
+            max-height: 1000px;
+            margin-top: 20px;
+        }
+        
+        .details-section {
+            margin-bottom: 20px;
+        }
+        
+        .details-section h4 {
+            color: #8B0000;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background: #f5f5f5;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .link-btn:hover {
+            background: #e0e0e0;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .professors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Distinguished NUS Professors</h1>
+            <p class="subtitle">World-Renowned Researchers and Innovators</p>
+            
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Back to Homepage
+                </a>
+                <a href="../index.html#world" class="nav-button">
+                    <i class="fas fa-globe"></i> View World Universities
+                </a>
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-university"></i> Back to NUS Home
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <p>The National University of Singapore is home to some of the world's most influential researchers. These three professors have made exceptional contributions to their fields, with citation counts and research impact that place them among the global elite.</p>
+        </div>
+        
+        <div class="professors-grid">
+            <!-- Professor Xiaoyuan (Shawn) Chen -->
+            <div class="professor-card">
+                <div class="card-header">
+                    <img src="Xiaoyuan.jpeg" alt="Professor Xiaoyuan (Shawn) Chen">
+                    <div class="card-overlay">
+                        <h2 class="professor-name">Xiaoyuan (Shawn) Chen</h2>
+                        <p class="professor-title">Chair Professor, Yong Loo Lin School of Medicine</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="quote">"Bridging the gap between molecular imaging discoveries and clinical applications."</p>
+                    
+                    <div class="research-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Molecular Imaging & Therapy</li>
+                            <li>Nanomedicine & Radiopharmaceuticals</li>
+                            <li>Translational Medicine</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">130,000+</div>
+                            <div class="stat-label">Citations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">190+</div>
+                            <div class="stat-label">H-index</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">1000+</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                    </div>
+                    
+                    <button class="toggle-btn" onclick="toggleDetails('chen')">
+                        View Full Profile <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="expanded-content" id="chen-details">
+                        <div class="details-section">
+                            <h4><i class="fas fa-graduation-cap"></i> Education & Career</h4>
+                            <p>BS, MS: Nanjing University, China<br>
+                            PhD in Chemistry: University of Idaho (1999)<br>
+                            Director of Nanomedicine Translational Research Programme at NUS</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-flask"></i> Research Interests</h4>
+                            <p>Molecular imaging and therapy, Nanomedicine, Development of radiopharmaceuticals (for cancer, cardiovascular disease, autoimmune disease), Translational medicine</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-award"></i> Awards & Honors</h4>
+                            <p>Michael J. Welch Award (2019), NIH Director's Award (2014), JNB Trailblazer Award (2023), Fellow of AIMBE and SNMMI</p>
+                        </div>
+                        
+                        <div class="links">
+                            <a href="https://tntchenlab.com" class="link-btn" target="_blank"><i class="fas fa-globe"></i> Lab Website</a>
+                            <a href="https://medicine.nus.edu.sg/people/chen-xiaoyuan-shawn/" class="link-btn" target="_blank"><i class="fas fa-user"></i> NUS Profile</a>
+                            <a href="mailto:chen.shawn@nus.edu.sg" class="link-btn"><i class="fas fa-envelope"></i> Email</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professor Seeram Ramakrishna -->
+            <div class="professor-card">
+                <div class="card-header">
+                    <img src="Seeram_Ramakrishna.jpeg" alt="Professor Seeram Ramakrishna">
+                    <div class="card-overlay">
+                        <h2 class="professor-name">Seeram Ramakrishna</h2>
+                        <p class="professor-title">Professor of Mechanical Engineering</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="quote">"Engineering nanomaterials for a sustainable future."</p>
+                    
+                    <div class="research-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Nanofibers & Nanotechnology</li>
+                            <li>Polymer Nanomaterials</li>
+                            <li>Circular Economy Materials</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">World's</div>
+                            <div class="stat-label">Most Cited</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">FREng</div>
+                            <div class="stat-label">Royal Academy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">Director</div>
+                            <div class="stat-label">Nanofibers Centre</div>
+                        </div>
+                    </div>
+                    
+                    <button class="toggle-btn" onclick="toggleDetails('ramakrishna')">
+                        View Full Profile <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="expanded-content" id="ramakrishna-details">
+                        <div class="details-section">
+                            <h4><i class="fas fa-graduation-cap"></i> Education & Career</h4>
+                            <p>PhD: University of Cambridge, UK<br>
+                            Former Vice-President (Research Strategy) at NUS<br>
+                            Former Dean of Engineering at NUS<br>
+                            Director of Centre for Nanofibers & Nanotechnology</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-flask"></i> Research Interests</h4>
+                            <p>Nanotechnology (especially nanofibers), Polymer nanomaterials, Applications in tissue engineering, molecular recognition, filters, Circular economy materials research</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-award"></i> Awards & Honors</h4>
+                            <p>Fellow of UK's Royal Academy of Engineering (FREng), Among world's most highly cited researchers, Numerous leadership awards in academia and sustainability</p>
+                        </div>
+                        
+                        <div class="links">
+                            <a href="https://cde.nus.edu.sg/me/staff/ramakrishna-seeram/" class="link-btn" target="_blank"><i class="fas fa-user"></i> NUS Profile</a>
+                            <a href="https://scholar.google.com/citations?user=SeeramRamakrishna" class="link-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professor Rui Zhang -->
+            <div class="professor-card">
+                <div class="card-header">
+                    <img src="Rui%20Zhang.jpeg" alt="Professor Rui Zhang">
+                    <div class="card-overlay">
+                        <h2 class="professor-name">Rui Zhang</h2>
+                        <p class="professor-title">Provost's Chair Professor, Electrical & Computer Engineering</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="quote">"Advancing wireless communications through innovation and optimization."</p>
+                    
+                    <div class="research-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Wireless Communications</li>
+                            <li>UAV/Drone Communications</li>
+                            <li>Reconfigurable Intelligent Surfaces</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">110,000+</div>
+                            <div class="stat-label">Citations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">150+</div>
+                            <div class="stat-label">H-index</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">600+</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                    </div>
+                    
+                    <button class="toggle-btn" onclick="toggleDetails('zhang')">
+                        View Full Profile <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="expanded-content" id="zhang-details">
+                        <div class="details-section">
+                            <h4><i class="fas fa-graduation-cap"></i> Education & Career</h4>
+                            <p>B.Eng (First Class Honours) + M.Eng: NUS (Electrical Engineering)<br>
+                            PhD: Stanford University, USA<br>
+                            Faculty at NUS ECE since 2010</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-flask"></i> Research Interests</h4>
+                            <p>Wireless communications, UAV/drone (non-terrestrial) communications, Reconfigurable antennas & intelligent surfaces, Wireless power transfer, Optimization & AI methods for communications systems</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-award"></i> Awards & Honors</h4>
+                            <p>Highly Cited Researcher (Clarivate) since 2015, Multiple IEEE awards including Marconi Prize and Heinrich Hertz Prize, Service on editorial boards of top IEEE journals</p>
+                        </div>
+                        
+                        <div class="links">
+                            <a href="https://www.ece.nus.edu.sg/stfpage/elezhang/" class="link-btn" target="_blank"><i class="fas fa-user"></i> NUS Profile</a>
+                            <a href="https://scholar.google.com/citations?user=RuiZhang" class="link-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                            <a href="https://www.researchgate.net/profile/Rui_Zhang" class="link-btn" target="_blank"><i class="fas fa-file-alt"></i> ResearchGate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>National University of Singapore</p>
+            <div class="footer-links">
+                <a href="https://www.nus.edu.sg">NUS Homepage</a>
+                <a href="https://research.nus.edu.sg">Research at NUS</a>
+                <a href="https://cde.nus.edu.sg">College of Design and Engineering</a>
+                <a href="https://medicine.nus.edu.sg">Yong Loo Lin School of Medicine</a>
+            </div>
+            <p>&copy; 2025 National University of Singapore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDetails(professorId) {
+            const details = document.getElementById(`${professorId}-details`);
+            const button = event.currentTarget;
+            const icon = button.querySelector('i');
+            
+            details.classList.toggle('active');
+            
+            if (details.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                button.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                button.innerHTML = 'View Full Profile <i class="fas fa-chevron-down"></i>';
+            }
+        }
+    </script>
+</body>
+</html>

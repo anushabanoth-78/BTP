@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford University - Influential Professors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <div class="caltech-logo">Caltech</div>
+            <header>
+                <h1>Caltech Professors Directory</h1>
+                <p class="subtitle">Department of Physics and Chemistry</p>
+            </header>
+        </div>
+        
+        <div class="nav-buttons">
+            <!-- FIXED: Changed to ../index.html to go back to main universities page -->
+            <a href="../index.html" class="nav-button"><i class="fas fa-home"></i> Back to Home</a>
+            <a href="#world-universities" class="nav-button"><i class="fas fa-university"></i> View World Universities</a>
+            <a href="#research-groups" class="nav-button"><i class="fas fa-users"></i> Research Groups</a>
+            <a href="#contact-directory" class="nav-button"><i class="fas fa-address-book"></i> Contact Directory</a>
+        </div>
+        
+        <main>
+            <div class="professors-grid">
+                <!-- Professor Chatziioannou -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <img src="Katerina Chatziioannou.jpeg" alt="Katerina Chatziioannou" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:#2c3e50; color:white; font-size:3rem; line-height:120px; text-align:center;">KC</div>
+                        <h2 class="professor-name">Katerina Chatziioannou</h2>
+                        <div class="professor-title">Assistant Professor of Physics, Caltech</div>
+                        <div class="professor-title">William H. Hurt Scholar</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Education & Career</h3>
+                        <ul class="education-list">
+                            <li>BS in Physics, University of Athens, 2010</li>
+                            <li>PhD in Physics, Montana State University, 2016</li>
+                            <li>Postdoc at CITA (Canadian Institute for Theoretical Astrophysics) 2016-2018</li>
+                            <li>Postdoc at Flatiron Institute's Center for Computational Astrophysics 2018-2020</li>
+                            <li>Joined Caltech as Assistant Professor in 2020</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Interests</h3>
+                        <ul class="research-list">
+                            <li>Gravitational-wave astrophysics</li>
+                            <li>General Relativity</li>
+                            <li>Member of LIGO Scientific Collaboration, LISA Consortium, NANOGrav</li>
+                            <li>Member of Simulating Extreme Spacetimes Collaboration</li>
+                            <li>Member of Simons Collaboration on Extreme Electrodynamics of Compact Sources</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('chatziioannou-more')">Show More Info</button>
+                        
+                        <div id="chatziioannou-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>Alfred P. Sloan Research Fellowship (2022)</li>
+                                <li>Early Career Award, US Department of Energy (2022)</li>
+                                <li>Young Scientist Prize in General Relativity and Gravitation (International Union of Pure and Applied Physics, 2022)</li>
+                                <li>Presidential Early Career Award for Scientists and Engineers (PECASE) in 2025</li>
+                                <li>Jürgen Ehlers Thesis Prize (2019)</li>
+                                <li>Perimeter Institute Visiting Fellow (since 2022)</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Contact Information</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://kchatziioannou.github.io/" target="_blank">Personal Website</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                    <div>kchatziioannou[at]caltech.edu</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>Office: 338 Cahill, TAPIR 350-17, Caltech, Pasadena, CA</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                    <div>+1 (626) 395-8511</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professor Robb -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <img src="Maxwell J. Robb.jpeg" alt="Maxwell J. Robb" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:#2c3e50; color:white; font-size:3rem; line-height:120px; text-align:center;">MR</div>
+                        <h2 class="professor-name">Maxwell J. Robb</h2>
+                        <div class="professor-title">Professor of Chemistry, Caltech</div>
+                        <div class="professor-title">Division of Chemistry & Chemical Engineering</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Education & Career</h3>
+                        <ul class="education-list">
+                            <li>B.S. in Chemistry, Colorado School of Mines (2009)</li>
+                            <li>PhD in Chemistry, University of California, Santa Barbara (2014)</li>
+                            <li>Postdoctoral research at University of Illinois, Urbana-Champaign</li>
+                            <li>Joined Caltech as Assistant Professor in 2017</li>
+                            <li>Promoted to Professor (with tenure) in May 2024</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Interests</h3>
+                        <ul class="research-list">
+                            <li>Synthetic organic chemistry</li>
+                            <li>Polymer chemistry</li>
+                            <li>Mechanochemistry (use of mechanical force to drive chemical reactions)</li>
+                            <li>Stress-responsive polymers</li>
+                            <li>Mechanophores</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('robb-more')">Show More Info</button>
+                        
+                        <div id="robb-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>Sloan Research Fellowship (2022)</li>
+                                <li>NSF CAREER Award (2022)</li>
+                                <li>Camille Dreyfus Teacher-Scholar (2022)</li>
+                                <li>National Fresenius Award (2023)</li>
+                                <li>Rose Hills Foundation Innovator Award (2023)</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Contact Information</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://robbgroup.caltech.edu" target="_blank">Robb Group Website</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                    <div>mrobb[at]caltech.edu</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                    <div>Office: 354b Crellin, Caltech</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-flask"></i></div>
+                                    <div>Lab: 303 & 320 Church, Caltech</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professor Wei -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <img src="Lu Wei.jpeg" alt="Lu Wei" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:#2c3e50; color:white; font-size:3rem; line-height:120px; text-align:center;">LW</div>
+                        <h2 class="professor-name">Lu Wei</h2>
+                        <div class="professor-title">Assistant Professor of Chemistry, Caltech</div>
+                        <div class="professor-title">Heritage Medical Research Institute (HMRI) Investigator</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Education & Career</h3>
+                        <ul class="education-list">
+                            <li>BS, Nanjing University (2010)</li>
+                            <li>PhD, Columbia University (2015)</li>
+                            <li>Postdoc at Columbia University, focusing on vibrational imaging</li>
+                            <li>Joined Caltech as Assistant Professor in 2018</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Interests</h3>
+                        <ul class="research-list">
+                            <li>Developing new optical imaging techniques using nonlinear vibrational spectroscopy</li>
+                            <li>Functional vibrational microscopy</li>
+                            <li>Study of metabolic dynamics</li>
+                            <li>Live-cell imaging</li>
+                            <li>Chemical biology</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('wei-more')">Show More Info</button>
+                        
+                        <div id="wei-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>Sloan Research Fellowship (2022)</li>
+                                <li>NIH Director's New Innovator Award (2020)</li>
+                                <li>Vallee Scholar Award (2022)</li>
+                                <li>NSF CAREER Award (2023)</li>
+                                <li>BPS Margaret Oakley Dayhoff Award (2024)</li>
+                                <li>Coblentz Award (2025)</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Contact Information</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://weilab.caltech.edu" target="_blank">Wei Lab Website</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                    <div>lwei[at]caltech.edu</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-users"></i></div>
+                                    <div><a href="https://weilab.caltech.edu/people" target="_blank">Lab Members & People Page</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Sections for Navigation -->
+            <section id="world-universities" class="page-section">
+                <h2>World Universities</h2>
+                <p>Caltech collaborates with leading universities worldwide to advance scientific research and education. Our global partnerships include institutions across North America, Europe, Asia, and Australia.</p>
+                <p>Key partner universities include MIT, Stanford, Cambridge, Oxford, ETH Zurich, University of Tokyo, and many others. These collaborations enable student exchanges, joint research projects, and shared resources.</p>
+                <p>Through these international partnerships, Caltech maintains its position at the forefront of global scientific innovation and discovery.</p>
+            </section>
+
+            <section id="research-groups" class="page-section">
+                <h2>Research Groups</h2>
+                <p>Caltech hosts numerous cutting-edge research groups across various scientific disciplines. Our research groups are known for their innovative approaches and groundbreaking discoveries.</p>
+                <p>Major research areas include gravitational-wave astrophysics, quantum mechanics, polymer chemistry, bio-imaging, nanotechnology, and sustainable energy solutions.</p>
+                <p>Each research group provides opportunities for undergraduate and graduate students to participate in meaningful scientific exploration under the guidance of world-renowned faculty members.</p>
+            </section>
+
+            <section id="contact-directory" class="page-section">
+                <h2>Contact Directory</h2>
+                <p>The Caltech contact directory provides comprehensive information for all faculty, staff, and departments across campus.</p>
+                <p>For general inquiries, please contact the main campus office at (626) 395-6811 or visit the administration building during business hours.</p>
+                <p>Department-specific contacts can be found through the individual department websites, or by visiting the campus directory portal at directory.caltech.edu.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <p>California Institute of Technology | Division of Physics, Mathematics and Astronomy | Division of Chemistry and Chemical Engineering</p>
+            <p>© 2025 Caltech Professors Directory. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fixed JavaScript function for toggle buttons
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                button.textContent = "Show More Info";
+            } else {
+                content.style.display = "block";
+                button.textContent = "Show Less Info";
+            }
+        }
+        
+        // Initialize all hidden content as hidden and setup smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const hiddenContents = document.querySelectorAll('.hidden-content');
+            hiddenContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

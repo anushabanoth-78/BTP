@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford University - Influential Professors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <div class="tokyo-logo">Univ. of Tokyo</div>
+            <header>
+                <h1>University of Tokyo</h1>
+                <p class="subtitle">Japan's Premier Research University</p>
+                <p class="university-info">Founded 1877 • Nobel Laureates • Global Excellence</p>
+            </header>
+        </div>
+        
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-button"><i class="fas fa-home"></i> Back to Universities</a>
+            <a href="#history" class="nav-button"><i class="fas fa-landmark"></i> University History</a>
+            <a href="#research" class="nav-button"><i class="fas fa-flask"></i> Research Excellence</a>
+            <a href="#legacy" class="nav-button"><i class="fas fa-award"></i> Nobel Legacy</a>
+        </div>
+        
+        <main>
+            <div class="professors-grid">
+                <!-- Professor Koshiba -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <div class="nobel-badge">Nobel 2002</div>
+                        <img src="Masatoshi_Koshiba.jpeg" alt="Masatoshi Koshiba" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:linear-gradient(45deg, #4a90e2, #2d5aa1); color:white; font-size:2.5rem; line-height:130px; text-align:center;">MK</div>
+                        <h2 class="professor-name">Masatoshi Koshiba</h2>
+                        <div class="professor-title">Nobel Laureate in Physics</div>
+                        <div class="professor-field">Neutrino Astronomy Pioneer</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Biography & Education</h3>
+                        <ul class="education-list">
+                            <li><strong>Born:</strong> September 19, 1926, Toyohashi, Japan</li>
+                            <li><strong>Education:</strong> University of Tokyo (Undergraduate & Graduate)</li>
+                            <li><strong>PhD:</strong> University of Rochester (1955)</li>
+                            <li>Professor at University of Tokyo, later Professor Emeritus</li>
+                            <li>Designed and built the revolutionary Kamiokande neutrino detector</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Breakthroughs</h3>
+                        <ul class="research-list">
+                            <li>Founded the field of neutrino astronomy</li>
+                            <li>First detection of solar neutrinos</li>
+                            <li>Historic detection of neutrinos from Supernova SN1987A</li>
+                            <li>Provided first evidence for neutrino oscillations</li>
+                            <li>Pioneered neutrino astrophysics research</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('koshiba-more')">
+                            <i class="fas fa-chevron-down"></i> Awards & More Information
+                        </button>
+                        
+                        <div id="koshiba-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>🏅 Nobel Prize in Physics (2002)</li>
+                                <li>Wolf Prize in Physics</li>
+                                <li>Nishina Memorial Prize (1987)</li>
+                                <li>Order of Culture (1988)</li>
+                                <li>Panofsky Prize (2002)</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Additional Resources</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://www.nobelprize.org/prizes/physics/2002/koshiba" target="_blank">Official Nobel Prize Profile</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-university"></i></div>
+                                    <div>University of Tokyo Tribute Archives</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-book"></i></div>
+                                    <div>Kamiokande Research Publications</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professor Esaki -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <div class="nobel-badge">Nobel 1973</div>
+                        <img src="2_Leo_Esaki.jpeg" alt="Leo Esaki" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:linear-gradient(45deg, #4a90e2, #2d5aa1); color:white; font-size:2.5rem; line-height:130px; text-align:center;">LE</div>
+                        <h2 class="professor-name">Leo Esaki</h2>
+                        <div class="professor-title">Nobel Laureate in Physics</div>
+                        <div class="professor-field">Quantum Tunneling Pioneer</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Biography & Education</h3>
+                        <ul class="education-list">
+                            <li><strong>Born:</strong> March 12, 1925, Osaka, Japan</li>
+                            <li><strong>Education:</strong> BS, MS, Doctor of Science - University of Tokyo</li>
+                            <li>Key researcher at Sony & IBM</li>
+                            <li>Maintained academic affiliation with University of Tokyo</li>
+                            <li>Pioneer in semiconductor physics</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Breakthroughs</h3>
+                        <ul class="research-list">
+                            <li>Invented the revolutionary tunnel diode (Esaki diode)</li>
+                            <li>Discovered quantum tunneling effect in semiconductors</li>
+                            <li>Major contributions to superlattice physics</li>
+                            <li>Founded quantum tunneling electronics field</li>
+                            <li>Esaki Prize established in his honor for nanoscience</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('esaki-more')">
+                            <i class="fas fa-chevron-down"></i> Awards & More Information
+                        </button>
+                        
+                        <div id="esaki-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>🏅 Nobel Prize in Physics (1973)</li>
+                                <li>IEEE Medal of Honor</li>
+                                <li>Japan Academy Prize</li>
+                                <li>Founder of the Leo Esaki Prize</li>
+                                <li>Foreign Associate of National Academy of Sciences</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Additional Resources</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://www.nobelprize.org/prizes/physics/1973/esaki" target="_blank">Official Nobel Prize Profile</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-university"></i></div>
+                                    <div>University of Tokyo Historical Records</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-trophy"></i></div>
+                                    <div>Leo Esaki Prize Information</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professor Nagaoka -->
+                <div class="professor-card">
+                    <div class="card-header">
+                        <div class="nobel-badge">Pioneer</div>
+                        <img src="Hantaro_Nagaoka.jpeg" alt="Hantaro Nagaoka" class="professor-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="professor-image" style="display:none; background:linear-gradient(45deg, #4a90e2, #2d5aa1); color:white; font-size:2.5rem; line-height:130px; text-align:center;">HN</div>
+                        <h2 class="professor-name">Hantaro Nagaoka</h2>
+                        <div class="professor-title">Atomic Physics Pioneer</div>
+                        <div class="professor-field">Saturnian Model of Atom</div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <h3 class="section-title">Biography & Education</h3>
+                        <ul class="education-list">
+                            <li><strong>Born:</strong> August 15, 1865, Japan</li>
+                            <li><strong>Education:</strong> University of Tokyo (Physics)</li>
+                            <li>Studied under leading European physicists</li>
+                            <li>Long-time Professor of Physics at University of Tokyo</li>
+                            <li>First President of Osaka University</li>
+                        </ul>
+                        
+                        <h3 class="section-title">Research Breakthroughs</h3>
+                        <ul class="research-list">
+                            <li>Proposed groundbreaking Saturnian Model of Atom (1904)</li>
+                            <li>Electrons orbiting nucleus like Saturn's rings</li>
+                            <li>Conceptually preceded Rutherford & Bohr models</li>
+                            <li>Pioneering work in spectroscopy and ion physics</li>
+                            <li>First description of meteor burst communications (1929)</li>
+                        </ul>
+                        
+                        <button class="expand-button" onclick="toggleContent('nagaoka-more')">
+                            <i class="fas fa-chevron-down"></i> Awards & More Information
+                        </button>
+                        
+                        <div id="nagaoka-more" class="hidden-content">
+                            <h3 class="section-title">Awards & Honors</h3>
+                            <ul class="awards-list">
+                                <li>Order of Culture (1937)</li>
+                                <li>First President of Osaka University</li>
+                                <li>Lunar crater named "Nagaoka" in his honor</li>
+                                <li>Foundational figure in Japanese physics education</li>
+                                <li>Pioneer of modern Japanese science</li>
+                            </ul>
+                            
+                            <div class="contact-info">
+                                <h3 class="section-title">Additional Resources</h3>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                                    <div><a href="https://en.wikipedia.org/wiki/Hantaro_Nagaoka" target="_blank">Wikipedia Biography</a></div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-university"></i></div>
+                                    <div>University of Tokyo Archives</div>
+                                </div>
+                                <div class="contact-item">
+                                    <div class="contact-icon"><i class="fas fa-book-open"></i></div>
+                                    <div>1904 Saturnian Model Research Papers</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Sections for Navigation -->
+            <section id="history" class="page-section">
+                <h2>University History & Legacy</h2>
+                <p>The University of Tokyo, established in 1877 as Japan's first modern Imperial University, has been at the forefront of academic excellence and scientific innovation for nearly 150 years. As Japan's premier research institution, it has shaped the nation's intellectual landscape and contributed significantly to global knowledge.</p>
+                <p>Throughout its distinguished history, the university has maintained its commitment to pioneering research while educating generations of leaders in science, technology, and academia. The institution's legacy is built upon a foundation of rigorous scholarship and groundbreaking discoveries.</p>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-number">1877</div>
+                        <div class="stat-label">Year Founded</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Nobel Laureates</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">1st</div>
+                        <div class="stat-label">Imperial University</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">Top</div>
+                        <div class="stat-label">Asia Ranking</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research" class="page-section">
+                <h2>Research Excellence & Innovation</h2>
+                <p>The University of Tokyo has consistently been a global leader across multiple scientific disciplines, with particular excellence in physics, engineering, technology, and materials science. The university's research infrastructure and collaborative environment have enabled transformative discoveries that have reshaped our understanding of the physical world.</p>
+                <p>From pioneering work in neutrino detection and quantum phenomena to groundbreaking advances in semiconductor technology and atomic theory, the university's researchers have consistently pushed the boundaries of human knowledge. The institution's commitment to fundamental research continues to yield practical applications and technological innovations.</p>
+                <p>Through its network of world-class laboratories, research centers, and international collaborations, the University of Tokyo maintains its position at the forefront of scientific discovery and technological advancement.</p>
+            </section>
+
+            <section id="legacy" class="page-section">
+                <h2>Nobel Legacy & Global Impact</h2>
+                <p>The University of Tokyo's impressive Nobel legacy reflects its sustained commitment to research excellence and scientific innovation. With multiple Nobel laureates across physics, chemistry, and other disciplines, the university has demonstrated its capacity for producing world-changing research across generations.</p>
+                <p>The professors featured here represent just a portion of the university's Nobel achievements, which include groundbreaking work in elementary particle physics, quantum electronics, and materials science. This tradition of excellence continues with new generations of researchers building upon the foundations laid by these pioneering scientists.</p>
+                <p>The university's global impact extends beyond its Nobel laureates, with its research contributing to advancements in technology, medicine, environmental science, and our fundamental understanding of the universe.</p>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-title">University of Tokyo</div>
+            <div class="footer-subtitle">Japan's Premier Research University | Founded 1877 | Global Excellence in Science & Technology</div>
+            <div class="footer-subtitle" style="margin-top: 15px;">© 2025 University of Tokyo Eminent Professors Directory</div>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript function for toggle buttons
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            const button = content.previousElementSibling;
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                button.innerHTML = '<i class="fas fa-chevron-down"></i> Awards & More Information';
+            } else {
+                content.style.display = "block";
+                button.innerHTML = '<i class="fas fa-chevron-up"></i> Show Less Information';
+            }
+        }
+        
+        // Initialize all hidden content as hidden and setup smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            const hiddenContents = document.querySelectorAll('.hidden-content');
+            hiddenContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

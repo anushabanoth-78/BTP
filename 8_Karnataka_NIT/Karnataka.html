@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NITK Surathkal - Research Faculty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a365d, #2d3748, #4a5568);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            height: 100px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .irins-link {
+            color: #63b3ed;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .irins-link:hover {
+            color: #90cdf4;
+            text-decoration: underline;
+        }
+
+        .note {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 900px;
+            font-style: italic;
+            border-left: 4px solid #63b3ed;
+        }
+
+        .faculty-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .faculty-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid #2b6cb0;
+        }
+
+        .faculty-content {
+            padding: 25px;
+        }
+
+        .faculty-name {
+            font-size: 1.8rem;
+            color: #2b6cb0;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #ecc94b;
+            padding-bottom: 10px;
+        }
+
+        .faculty-position {
+            color: #2d3748;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .faculty-department {
+            color: #4a5568;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #2b6cb0;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .research-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .research-tag {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #495057;
+            border-left: 3px solid #2b6cb0;
+        }
+
+        .highlights-list {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .highlights-list li {
+            margin-bottom: 8px;
+        }
+
+        .profile-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #2b6cb0;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .profile-link:hover {
+            background: #2c5282;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .faculty-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="logo.png" alt="NITK Surathkal Logo" class="logo">
+                <h1>National Institute of Technology Karnataka, Surathkal</h1>
+                <p class="subtitle">Prominent Research Faculty Profiles</p>
+                <p class="intro">The National Institute of Technology Karnataka (NITK), Surathkal has many faculty members with strong research profiles. This page highlights three examples of highly visible researchers whose work is prominently reflected on the <a href="https://nitk.irins.org" class="irins-link" target="_blank">NITK IRINS research information system</a> and on institute announcements.</p>
+                <div class="note">
+                    These profiles are not an official "top three" ranking, but sample cases showing high research impact and recognition.
+                </div>
+            </div>
+        </header>
+
+        <div class="faculty-container">
+            <!-- Prof. Arun Mohan Isloor -->
+            <div class="faculty-card">
+                <img src="Prof_Arun_Mohan_Isloor.jpeg" alt="Prof. Arun Mohan Isloor" class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Arun Mohan Isloor</h2>
+                    <p class="faculty-position">Professor (HAG)</p>
+                    <p class="faculty-department">Department of Chemistry</p>
+                    
+                    <h3 class="section-title">Research Areas</h3>
+                    <div class="research-areas">
+                        <span class="research-tag">Membrane technology</span>
+                        <span class="research-tag">Separation processes</span>
+                        <span class="research-tag">Medicinal chemistry</span>
+                        <span class="research-tag">Pharmaceutical chemistry</span>
+                        <span class="research-tag">Nanomaterials</span>
+                        <span class="research-tag">Nanotechnology</span>
+                        <span class="research-tag">Organic synthesis</span>
+                        <span class="research-tag">Crystal engineering</span>
+                    </div>
+                    
+                    <h3 class="section-title">Research Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Leads the Membrane Technology Laboratory in the Department of Chemistry</li>
+                        <li>300+ publications with high citation count on NITK IRINS platform</li>
+                        <li>Co-inventor on patents related to ultrafiltration membranes and water purifiers</li>
+                        <li>Associated with faculty startup Apahatech Solutions for water purification technologies</li>
+                    </ul>
+                    
+                    <p><strong>Joined NITK:</strong> 10 January 2008</p>
+                    
+                    <a href="https://chemistry.nitk.ac.in" class="profile-link" target="_blank">View Department Profile</a>
+                </div>
+            </div>
+
+            <!-- Prof. Santhosh George -->
+            <div class="faculty-card">
+                <img src="Prof_Santhosh _George.jpeg" alt="Prof. Santhosh George" class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Santhosh George</h2>
+                    <p class="faculty-position">Professor (HAG)</p>
+                    <p class="faculty-department">Department of Mathematical and Computational Sciences</p>
+                    
+                    <h3 class="section-title">Research Areas</h3>
+                    <div class="research-areas">
+                        <span class="research-tag">Functional analysis</span>
+                        <span class="research-tag">Real/complex analysis</span>
+                        <span class="research-tag">Inverse problems</span>
+                        <span class="research-tag">Ill-posed problems</span>
+                        <span class="research-tag">Numerical analysis</span>
+                        <span class="research-tag">Numerical methods</span>
+                        <span class="research-tag">Mathematical modeling</span>
+                        <span class="research-tag">Applied mathematics</span>
+                    </div>
+                    
+                    <h3 class="section-title">Research Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Hundreds of publications with significant citation record on NITK IRINS</li>
+                        <li>Active Google Scholar and IRINS profiles showing strong research impact</li>
+                        <li>28+ years of professional experience with 15+ years at NITK</li>
+                    </ul>
+                    
+                    <p><strong>Joined NITK:</strong> 12 February 2008</p>
+                    
+                    <a href="https://macs.nitk.ac.in" class="profile-link" target="_blank">View Department Profile</a>
+                </div>
+            </div>
+
+            <!-- Prof. Raj Mohan B. -->
+            <div class="faculty-card">
+                <img src="Prof_Raj_Mohan_B.jpeg" alt="Prof. Raj Mohan B." class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Raj Mohan B.</h2>
+                    <p class="faculty-position">Professor</p>
+                    <p class="faculty-department">Department of Chemical Engineering</p>
+                    
+                    <h3 class="section-title">Research Areas</h3>
+                    <div class="research-areas">
+                        <span class="research-tag">Air pollution control</span>
+                        <span class="research-tag">Separation technologies</span>
+                        <span class="research-tag">Wastewater treatment</span>
+                        <span class="research-tag">Water quality monitoring</span>
+                        <span class="research-tag">Bioremediation</span>
+                        <span class="research-tag">Biosynthesis</span>
+                        <span class="research-tag">Nanoparticles</span>
+                    </div>
+                    
+                    <h3 class="section-title">Research Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Recipient of Professor Satish Dhawan Young Engineer State Award 2021</li>
+                        <li>50+ research publications on pollution control and environmental solutions</li>
+                        <li>Research focuses on particulate pollution, CO₂ sequestration, and nanoparticle synthesis</li>
+                        <li>Long association with NITK, progressing from Lecturer to Professor</li>
+                    </ul>
+                    
+                    <a href="https://chemical.nitk.ac.in" class="profile-link" target="_blank">View Department Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-button">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="../index.html#world" class="nav-button">
+                <i class="fas fa-globe"></i> View World Universities
+            </a>
+        </div>
+
+        <footer>
+            <p>NITK Surathkal Faculty Profiles &copy; 2025 | Data Source: NITK IRINS</p>
+        </footer>
+    </div>
+</body>
+</html>

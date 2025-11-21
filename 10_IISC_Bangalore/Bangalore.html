@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanford University - Influential Professors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="logo.png" alt="IISc Logo" class="logo">
+                <div>
+                    <h1>Distinguished IISc Professors</h1>
+                    <p class="subtitle">Excellence in Research and Teaching</p>
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="nav-buttons">
+                <a href="../index.html" class="nav-button">
+                    <i class="fas fa-home"></i> Back to Homepage
+                </a>
+                <a href="../index.html#world" class="nav-button">
+                    <i class="fas fa-globe"></i> View World Universities
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="intro">
+            <p>The Indian Institute of Science (IISc) Bangalore is home to world-renowned researchers and educators. These professors have made exceptional contributions to their fields, demonstrating excellence in both groundbreaking research and innovative teaching methodologies.</p>
+        </div>
+        
+        <div class="professors-grid">
+            <!-- Professor Ajay Kumar Sood -->
+            <div class="professor-card">
+                <div class="rank-badge">1</div>
+                <div class="card-header">
+                    <img src="Ajay_Kumar_Sood.jpeg" alt="Professor Ajay Kumar Sood">
+                    <div class="card-overlay">
+                        <h2 class="professor-name">Ajay Kumar Sood</h2>
+                        <p class="professor-title">Principal Scientific Adviser to Government of India | Distinguished Professor, IISc Bangalore</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="quote">"Bridging fundamental research with national scientific policy for India's development."</p>
+                    
+                    <div class="research-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Condensed Matter Physics & Nanoscience</li>
+                            <li>Quantum Materials & Soft Matter</li>
+                            <li>Raman Spectroscopy & Ultrafast Processes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">450+</div>
+                            <div class="stat-label">Publications</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">FRS</div>
+                            <div class="stat-label">Royal Society</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">INSA</div>
+                            <div class="stat-label">President</div>
+                        </div>
+                    </div>
+                    
+                    <button class="toggle-btn" onclick="toggleDetails('sood')">
+                        View Full Profile <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="expanded-content" id="sood-details">
+                        <div class="details-section">
+                            <h4><i class="fas fa-graduation-cap"></i> Education & Career</h4>
+                            <p>M.Sc. (Physics): Panjab University, Chandigarh (1972)<br>
+                            Ph.D. (Physics): Indian Institute of Science, Bangalore (1982)<br>
+                            Postdoctoral Research: Max Planck Institute, Stuttgart, Germany (1983-85)<br>
+                            Scientist: Indira Gandhi Centre for Atomic Research, Kalpakkam (1973-88)<br>
+                            Faculty at IISc: Since 1988 (Associate Professor to Distinguished Professor)<br>
+                            Principal Scientific Adviser to Government of India: Since April 2022</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-flask"></i> Research Interests</h4>
+                            <p>Condensed matter physics (hard and soft), Nanoscience and nanotechnology, Quantum materials including graphene and nanotubes, Soft and active matter, Raman spectroscopy and ultrafast processes, Physics at the nanoscale, Nonequilibrium statistical mechanics</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-award"></i> Awards & Honors</h4>
+                            <p>Padma Shri (2013), Shanti Swarup Bhatnagar Prize (1990), Fellow of the Royal Society (FRS, 2015), TWAS Prize in Physics (2000), G.D. Birla Award for Scientific Research, Homi Bhabha Medal of INSA, President of Indian National Science Academy (2017-19), President of Indian Academy of Sciences (2010-12), Secretary-General of The World Academy of Sciences (TWAS, 2013-18)</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-briefcase"></i> Key Leadership Roles</h4>
+                            <p>Principal Scientific Adviser to Government of India (2022-present), Chairperson of Prime Minister's Science, Technology & Innovation Advisory Council (PM-STIAC), Chair of IISc's Division of Physical and Mathematical Sciences (1998-2008), Member of Scientific Advisory Council to the Prime Minister of India (2009-2014), Associate Editor of ACS Nano</p>
+                        </div>
+                        
+                        <div class="links">
+                            <a href="https://physics.iisc.ac.in/people/ajay-kumar-sood/" class="link-btn" target="_blank"><i class="fas fa-user"></i> IISc Profile</a>
+                            <a href="https://www.psa.gov.in/member-detail/145" class="link-btn" target="_blank"><i class="fas fa-globe"></i> PSA Profile</a>
+                            <a href="https://scholar.google.com/citations?user=AjaySood" class="link-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Professor Deepak Subramani -->
+            <div class="professor-card">
+                <div class="rank-badge silver">2</div>
+                <div class="card-header">
+                    <img src="Deepak _Subramani.jpeg" alt="Professor Deepak Subramani">
+                    <div class="card-overlay">
+                        <h2 class="professor-name">Deepak Subramani</h2>
+                        <p class="professor-title">Assistant Professor, Computational & Data Sciences, IISc Bangalore</p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p class="quote">"Advancing data science and machine learning applications for complex geoscientific challenges."</p>
+                    
+                    <div class="research-highlights">
+                        <h3>Research Focus</h3>
+                        <ul>
+                            <li>Machine Learning & Deep Learning</li>
+                            <li>Geoscience Modeling & Data Analysis</li>
+                            <li>Computational Data Science</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-value">Teaching</div>
+                            <div class="stat-label">Excellence Award</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">ML/AI</div>
+                            <div class="stat-label">Geoscience Apps</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">IISc</div>
+                            <div class="stat-label">CDS Department</div>
+                        </div>
+                    </div>
+                    
+                    <button class="toggle-btn" onclick="toggleDetails('subramani')">
+                        View Full Profile <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="expanded-content" id="subramani-details">
+                        <div class="details-section">
+                            <h4><i class="fas fa-graduation-cap"></i> Education & Career</h4>
+                            <p>Please add Professor Subramani's educational background and career history here based on your information.</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-flask"></i> Research Interests</h4>
+                            <p>Please add detailed research interests for Professor Subramani here based on your information.</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-award"></i> Awards & Honors</h4>
+                            <p>IISc Award for Excellence in Teaching<br>
+                            Recognition for innovative courses in machine learning and deep learning applications to geosciences</p>
+                        </div>
+                        
+                        <div class="details-section">
+                            <h4><i class="fas fa-chalkboard-teacher"></i> Teaching Contributions</h4>
+                            <p>Please add details about Professor Subramani's teaching contributions, specific courses, and educational innovations here.</p>
+                        </div>
+                        
+                        <div class="links">
+                            <a href="#" class="link-btn" target="_blank"><i class="fas fa-user"></i> IISc Profile</a>
+                            <a href="#" class="link-btn" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                            <a href="#" class="link-btn" target="_blank"><i class="fas fa-file-alt"></i> ResearchGate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Indian Institute of Science (IISc) Bangalore</p>
+            <div class="footer-links">
+                <a href="https://www.iisc.ac.in">IISc Homepage</a>
+                <a href="https://iisc.ac.in/research/">Research at IISc</a>
+                <a href="https://cds.iisc.ac.in">Computational & Data Sciences</a>
+                <a href="https://physics.iisc.ac.in">Department of Physics</a>
+            </div>
+            <p>&copy; 2025 Indian Institute of Science. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDetails(professorId) {
+            const details = document.getElementById(`${professorId}-details`);
+            const button = event.currentTarget;
+            const icon = button.querySelector('i');
+            
+            details.classList.toggle('active');
+            
+            if (details.classList.contains('active')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+                button.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+                button.innerHTML = 'View Full Profile <i class="fas fa-chevron-down"></i>';
+            }
+        }
+    </script>
+</body>  
+</html>

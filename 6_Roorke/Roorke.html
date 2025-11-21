@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIT Roorkee - Award-Winning Faculty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo {
+            height: 100px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .faculty-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .faculty-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .faculty-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 4px solid #1a2a6c;
+        }
+
+        .faculty-content {
+            padding: 25px;
+        }
+
+        .faculty-name {
+            font-size: 1.8rem;
+            color: #1a2a6c;
+            margin-bottom: 5px;
+            border-bottom: 2px solid #fdbb2d;
+            padding-bottom: 10px;
+        }
+
+        .faculty-position {
+            color: #b21f1f;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .award-badge {
+            display: inline-block;
+            background: #1a2a6c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            color: #1a2a6c;
+            margin: 20px 0 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .research-areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .research-tag {
+            background: #e9ecef;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #495057;
+            border-left: 3px solid #1a2a6c;
+        }
+
+        .highlights-list {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        .highlights-list li {
+            margin-bottom: 8px;
+        }
+
+        .awards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .award-item {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #b21f1f;
+            font-size: 0.9rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .faculty-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-button {
+                width: 80%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <img src="logo.png" alt="IIT Roorkee Logo" class="logo">
+                <h1>Indian Institute of Technology Roorkee</h1>
+                <p class="subtitle">Award-Winning Faculty Members</p>
+                <p class="intro">While the idea of "top professors" is subjective, certain faculty members of IIT Roorkee are widely respected for their academic contributions, national recognition, and teaching excellence. Below are some of the most notable award-winning professors in recent years.</p>
+            </div>
+        </header>
+
+        <div class="faculty-container">
+            <!-- Prof. Praveen Kumar -->
+            <div class="faculty-card">
+                <img src="Prof_Praveen _Kumar.jpeg" alt="Prof. Praveen Kumar" class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Praveen Kumar</h2>
+                    <p class="faculty-position">Department of Civil Engineering</p>
+                    <div class="award-badge">Lifetime Teaching Achievement Award, Teachers' Day 2025</div>
+                    
+                    <h3 class="section-title">Research Areas</h3>
+                    <div class="research-areas">
+                        <span class="research-tag">Water Resources Engineering</span>
+                        <span class="research-tag">Hydrology</span>
+                        <span class="research-tag">Infrastructure Development</span>
+                        <span class="research-tag">Sustainability</span>
+                    </div>
+                    
+                    <h3 class="section-title">Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Honored for over three decades of outstanding teaching and mentorship in civil engineering</li>
+                        <li>Recognized for contributions to water resources engineering and hydrology</li>
+                        <li>Known for shaping generations of civil engineering graduates</li>
+                        <li>Renowned for clear instruction and practical-oriented teaching approach</li>
+                    </ul>
+                    
+                    <p><strong>Teaching Style:</strong> Practical-oriented with focus on real-world applications</p>
+                </div>
+            </div>
+
+            <!-- Prof. Pradeep Kumar -->
+            <div class="faculty-card">
+                <img src="Prof_Pradeep_Kumar.jpeg" alt="Prof. Pradeep Kumar" class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Pradeep Kumar</h2>
+                    <p class="faculty-position">Professor at IIT Roorkee</p>
+                    <div class="award-badge">Lifetime Teaching Achievement Award, Teachers' Day 2024</div>
+                    
+                    <h3 class="section-title">Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Awarded in 2024 for exemplary career in teaching, student development, and academic service</li>
+                        <li>Known for innovating teaching methodologies and contributing to curriculum enhancement</li>
+                        <li>Highly respected by students for focus on clarity and foundational understanding</li>
+                        <li>Emphasizes real-world engineering applications in teaching</li>
+                    </ul>
+                    
+                    <p><strong>Contributions:</strong> Curriculum development and innovative teaching methods</p>
+                </div>
+            </div>
+
+            <!-- Prof. Gopinath Packirisamy -->
+            <div class="faculty-card">
+                <img src="Prof_Gopinath_Packirisamy.jpeg" alt="Prof. Gopinath Packirisamy" class="faculty-img">
+                <div class="faculty-content">
+                    <h2 class="faculty-name">Prof. Gopinath Packirisamy</h2>
+                    <p class="faculty-position">Department of Biosciences & Bioengineering</p>
+                    
+                    <h3 class="section-title">Awards & Recognition</h3>
+                    <div class="awards-container">
+                        <div class="award-item">Ramkumar Prize for Outstanding Teaching & Research (2025)</div>
+                        <div class="award-item">Excellence in Teaching and Research Award (2024)</div>
+                    </div>
+                    
+                    <h3 class="section-title">Research Areas</h3>
+                    <div class="research-areas">
+                        <span class="research-tag">Biomedical Engineering</span>
+                        <span class="research-tag">Molecular Biology</span>
+                        <span class="research-tag">Bioengineering Applications</span>
+                        <span class="research-tag">Healthcare Technology</span>
+                    </div>
+                    
+                    <h3 class="section-title">Highlights</h3>
+                    <ul class="highlights-list">
+                        <li>Leading researcher in biosciences with major work in biomedical engineering</li>
+                        <li>One of the few IIT Roorkee faculty to receive major consecutive awards for both teaching and research</li>
+                        <li>Known for impactful publications, labs, and mentorship of research students</li>
+                        <li>Focus on bioengineering applications in healthcare</li>
+                    </ul>
+                    
+                    <p><strong>Specialization:</strong> Dual excellence in teaching and high-impact research</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="../index.html" class="nav-button">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="../index.html#world" class="nav-button">
+                <i class="fas fa-globe"></i> View World Universities
+            </a>
+        </div>
+
+        <footer>
+            <p>IIT Roorkee Faculty Profiles &copy; 2025</p>
+        </footer>
+    </div>
+</body>
+</html>
